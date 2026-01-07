@@ -1,0 +1,78 @@
+<!-- todos.html -->
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Your ToDo App">
+    <meta name="author" content="K.W.">
+    <title>ToDo List App</title>
+    <link rel="stylesheet" href="/static/css/todos.css">
+</head>
+<body>
+    <header id="header" class="flex-row">
+        <button type="button" id="logout-btn">Logout</button>
+        <button type="button" id="toggle-dark-mode-btn">DarkMode</button>
+        <span style="margin-left: 1rem;"><a href="/">ホーム</a></span>
+        <section id="login-status-section" class="hidden">
+            <p>user</p>
+        </section>
+    </header>
+    
+    <div id="app" class="flex-column">
+        <main id="main" class="flex-column">
+            <section id="login-form-section" class="on-logout hidden">
+                <h1>Login</h1>
+                <form id="login-form" class="flex-column">
+                    <input type="text" name="username" placeholder="Username" required>
+                    <input type="password" name="password" placeholder="Password" required>
+                    <button type="submit" id="login-btn">Login</button>
+                </form>
+            </section>
+
+            <div class="space on-logout hidden"></div>
+            
+            <section id="sign-up-form-section" class="on-logout flex-column hidden">
+                <h1>Create a new account</h1>
+                <form id="sign-up-form" class="flex-column">
+                    <input type="text" name="username" placeholder="Username" required>
+                    <input type="password" name="password" placeholder="Password" required>
+                    <button type="submit" id="sign-up-btn">Create a new account</button>
+                </form>
+            </section>
+
+            <section id="todo-list-section" class="flex-column on-login">
+                <h1>ToDo List</h1>
+                <!-- todo list here: dummy todo list before loading data -->
+                <ul id="todo-list" class="flex-column">
+                    <li class="dummy-todo-li"></li>
+                    <li class="dummy-todo-li"></li>
+                    <li class="dummy-todo-li"></li>
+                    <li class="dummy-todo-li"></li>
+                </ul>
+            </section>
+
+            <div class="space"></div>
+            
+            <section id="add-todo-form-section" class="flex-column on-login hidden">
+                <h2>Add a new ToDo</h2>
+                <!-- add todo form -->
+                <form id="add-todo-form" class="flex-column">
+                    <input type="text" id="title" name="title" placeholder="Title" required>
+                    <textarea id="content" name="content" placeholder="Content" oninput="autoResize(this)"></textarea>
+                    <button id="add-todo-form-btn" type="submit">Add ToDo</button>
+                </form>
+            </section>
+        </main>
+
+        <div class="space"></div>
+    </div>
+
+    <footer id="footer">
+        <p>（一社）養老スポーツクラブ</p>
+    </footer>
+
+    <script src="/static/js/todos.js"></script>
+</body>
+</html>

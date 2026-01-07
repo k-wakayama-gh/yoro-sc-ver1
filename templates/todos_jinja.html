@@ -1,0 +1,91 @@
+<!-- todos_jinja.html -->
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Your ToDo App">
+    <meta name="author" content="YourToDoApp">
+    <title>ToDo List</title>
+    <link rel="stylesheet" href="/static/css/base.css">
+    <link rel="stylesheet" href="/static/css/todos.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <section id="login-form-section">
+                <form id="login-form" class="" action="/token" method="post">
+                    <!-- ユーザー名とパスワードの入力フォーム -->
+                    <input type="text" name="username" placeholder="Username">
+                    <input type="password" name="password" placeholder="Password">
+                    <!-- ログインボタン -->
+                    <button type="submit">Login</button>
+                    <!-- ログアウトボタン -->
+                    <button type="button" id="logout-btn">Logout</button>
+                </form>
+            </section>
+        </header>
+        
+        <main>
+            <section id="todo-list-section">
+                <h1>ToDo List</h1>
+            
+                <ul id="todo-list">
+                    {% for todo in todos %}
+                    <!-- ToDoリストの各アイテム -->
+                    <li>
+                        <strong>{{ todo.title }}</strong>
+                        {% if todo.content %}
+                        <p>{{ todo.content }}</p>
+                        {% endif %}
+                        {% if todo.is_done %}
+                        <p>Status: Done</p>
+                        {% else %}
+                        <p>Status: Pending</p>
+                        {% endif %}
+                        <section class="todo-action-section">
+                            <!-- Pending状態変更ボタン -->
+                            <button class="toggle-status-btn" data-todo-id="{{ todo.id }}" data-is-done="{{ todo.is_done }}">Toggle Status</button>
+                            <!-- Editボタン -->
+                            <button class="edit-btn" data-todo-id="{{ todo.id }}">Edit</button>
+                            <!-- Deleteボタン -->
+                            <button class="delete-btn" data-todo-id="{{ todo.id }}">Delete</button>
+                            <!-- 確認用メッセージ -->
+                            <div class="confirmation-popup hidden" data-todo-id="{{ todo.id }}">
+                                <p>Are you sure you want to delete this ToDo?</p>
+                                <button class="confirm-delete-btn">Confirm</button>
+                                <button class="cancel-delete-btn">Cancel</button>
+                            </div>
+                            <!-- Editフォーム -->
+                            <div class="edit-form hidden" data-todo-id="{{ todo.id }}">
+                                <input type="text" class="edit-title" placeholder="New Title" value="{{ todo.title }}">
+                                <textarea class="edit-content" placeholder="New Content" oninput="autoResize(this)">{{ todo.content }}</textarea>
+                                <button class="confirm-edit-btn">Save</button>
+                                <button class="cancel-edit-btn">Cancel</button>
+                            </div>
+                        </section>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </section>
+            
+            <section id="add-todo-form-section">
+                    <!-- 新しいToDoを追加するフォーム -->
+            <h2>Add a new ToDo</h2>
+            <form id="add-todo-form" action="/todos" method="post">
+                <input type="text" id="title" name="title" placeholder="Title" required>
+                <textarea id="content" name="content" placeholder="Content" oninput="autoResize(this)"></textarea>
+                <button type="submit">Add ToDo</button>
+            </form>
+            </section>
+        </main>
+        
+        <footer>
+            <p>&copy; 2023 YourToDoApp. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="/static/js/todos_jinja.js"></script>
+</body>
+</html>

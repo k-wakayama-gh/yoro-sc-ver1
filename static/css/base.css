@@ -1,0 +1,321 @@
+/* base.css */
+
+:root {
+    --text-color: #333333;
+    --bg-color: #f0f0f0;
+    --bg-color-accent: #f4f4f4;
+    --border-form: 1px solid #bfbfbf;
+    --box-shadow: 0 2px 4px darkgray;
+}
+
+.dark-mode {
+    --text-color: #f0f0f0;
+    --bg-color: #161616;
+    --bg-color-accent: #1e1e1e;
+    --border-form: 1px solid #888888;
+    --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    font-size: medium;
+    overflow-y: scroll;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+main {
+    padding: 1rem;
+    background-color: var(--bg-color);
+    flex: 1;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #333333;
+    color: #cccccc;
+    text-align: center;
+}
+
+footer {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin-top: 2rem;
+    background-color: #333333;
+    color: #f0f0f0;
+    text-align: center;
+    font-size: small;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-color);
+}
+
+button {
+	outline: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+    box-sizing: border-box;
+    cursor: pointer;
+    touch-action: manipulation;
+    font-size: medium;
+    border: none;
+    padding: 1rem;
+}
+
+a {
+    color: #20a7cd;
+}
+
+a:visited {
+    color: #761ddc;
+}
+
+/* remove default list styles and the margin on the left */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+input, textarea {
+    color: var(--text-color);
+    background-color: var(--bg-color-accent);
+    border: var(--border-form);
+    border-radius: 3px;
+    box-sizing: border-box; /* size with borders */
+    padding: 1rem; /* 0.5rem = 8px if font size is 16px */
+    font-size: medium;
+    margin: 0.5rem 0;
+}
+
+textarea {
+    resize: none;
+    font-family: inherit;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.flex-column-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.insert-space > * {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.flex-row-between {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.flex-row-center {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.grid-column {
+    display: grid;
+    flex-direction: column;
+}
+
+.space {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.limit-width-30 {
+    max-width: 30rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.bg {
+    background-color: var(--bg-color);
+}
+
+.bg-accent {
+    background-color: var(--bg-color-accent);
+}
+
+.a-btn {
+    border: none;
+    border-radius: 2px;
+    box-sizing: border-box;
+    background-color: #0f65ac;
+    box-shadow: var(--box-shadow);
+    text-decoration: none;
+    padding: 1rem;
+    color: white;
+    cursor: pointer;
+    font-size: medium;
+    text-align: center;
+}
+
+.a-btn:hover {
+    /* background-color: #2fafda; */
+    background-color: #1378ca;
+    box-shadow: none;
+}
+
+.a-btn-green {
+    background-color: #1f6c15;
+}
+
+.a-btn-green:hover {
+    background-color: #3c9537;
+}
+
+.a-btn:visited {
+    color: white;
+}
+
+#nav-mobile-content {
+    padding-bottom: 1rem;
+}
+
+#nav-mobile-content > a {
+    text-decoration: none;
+    color: aliceblue;
+    padding: 1rem;
+}
+
+#nav-mobile-content > a:hover {
+    background-color: gray;
+}
+
+#nav-pc > a {
+    text-decoration: none;
+    color: aliceblue;
+    padding: 1rem;
+}
+
+#user-btn, #menu-btn, #logout-btn {
+    border: none;
+    background-color: #333333;
+    color: #f0f0f0;
+    padding: 1rem 1rem;
+    font-size: small;
+}
+
+
+#page-directory-div {
+    padding: 1em 0;
+    font-size: small;
+    overflow-wrap: break-word;
+    word-break: keep-all;
+    overflow-x: auto;
+    background-color: var(--bg-color-accent);
+    flex-shrink: 0;
+}
+
+#page-directory-div > span {
+    margin-right: 1rem;
+}
+
+#page-directory-div::before {
+    content: "";
+    padding-left: 1rem;
+}
+
+#page-directory-div::after {
+    content: "";
+    padding-right: 1rem;
+}
+
+#login-btn {
+    background-color: #2e7395;
+    color: white;
+    pointer-events: auto;
+    margin-top: 0.5rem;
+    padding: 1rem;
+    border: none;
+    border-radius: 2px;
+    box-sizing: border-box;
+    font-size: medium;
+}
+
+#login-btn:hover {
+    background-color: #4c99af;
+}
+
+
+#login-failed-message {
+    color: rgb(155, 72, 13);
+    background-color: antiquewhite;
+    text-align: start;
+    padding: 0.5rem;
+}
+
+
+/* hidden must be last */
+.hidden {
+    display: none;
+}
+
+
+/* responsive design for tablet and PC */
+@media screen and (min-width: 60rem) {
+    .flex-column-center > * {
+        min-width: 30rem;
+    }
+
+    #nav-mobile {
+        display: none;
+    }
+
+    #nav-pc {
+        display: flex;
+    }
+}
+
+@media screen and (max-width: 60rem) {
+    .flex-column-center > * {
+        width: 100%;
+    }
+}
+
+/* exceptional dark mode */
+@media (prefers-color-scheme: dark) {
+    /* pass */
+    a:visited {
+        color: #761ddc;
+    }
+}
+

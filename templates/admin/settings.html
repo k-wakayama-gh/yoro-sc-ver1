@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="Yoro Sports Club official website">
+		<meta name="author" content="K.W.">
+		<meta name="robots" content="noindex, nofollow">
+		<link rel="stylesheet" href="/static/css/base.css">
+		<title>設定</title>
+	</head>
+	<body>
+		{% include "header.html" %}
+
+		<div id="page-directory-div" class="flex-row">
+			<span><a href="/admin">管理者ページ</a></span>
+			<span>＞</span>
+			<span>設定画面</span>
+		</div>
+
+		<main class="flex-column-center">
+
+			<h2 class="text-center">（一社）養老スポーツクラブ</h2>
+
+			{% include "login.html" %}
+
+			<div class="space"></div>
+
+			<div class="container">
+				<h1>期間情報更新</h1>
+				<form id="period-form">
+				<div>
+					<label for="year">年:</label>
+					<input type="number" id="year" name="year" required>
+				</div>
+				<div>
+					<label for="season">シーズン:</label>
+					<input type="number" id="season" name="season" required>
+				</div>
+				<div>
+					<label for="start_time">開始日時:</label>
+					<input type="datetime-local" id="start_time" name="start_time" required>
+				</div>
+				<div>
+					<label for="end_time">終了日時:</label>
+					<input type="datetime-local" id="end_time" name="end_time" required>
+				</div>
+				<button type="submit">更新</button>
+				</form>
+				<div id="response-message"></div>
+			</div>
+		</main>
+
+		<footer id="footer">
+			<p>（一社）養老スポーツクラブ</p>
+		</footer>
+
+		<script src="/static/js/base.js"></script>
+		<script src="/static/js/login.js"></script>
+		<script src="/static/js/admin/settings.js"></script>
+	</body>
+</html>

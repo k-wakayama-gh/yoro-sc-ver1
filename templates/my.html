@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Yoro Sports Club official website">
+    <meta name="author" content="K.W.">
+    <link rel="stylesheet" href="/static/css/base.css">
+    <link rel="stylesheet" href="/static/css/my.css">
+    <title>マイページ</title>
+</head>
+<body>
+    {% include "header.html" %}
+
+    <div id="page-directory-div" class="flex-row">
+        <span><a href="/">ホーム</a></span>
+        <span>＞</span>
+        <span>マイページ</span>
+    </div>
+
+    <main class="flex-column-center">
+        <h2 class="text-center">（一社）養老スポーツクラブ</h2>
+
+        {% include "login.html" %}
+
+        <div class="flex-column on-login">
+            <h2 class="text-center">マイページ</h2>
+            <div class="space"></div>
+            <a class="a-btn" href="/my/userdetails">利用者情報を確認する</a>
+            <div class="space"></div>
+            <a class="a-btn" href="/my/lessons">申し込み済みの教室を確認する</a>
+            <div class="space"></div>
+        </div>
+    </main>
+
+    <footer id="footer">
+        <p>（一社）養老スポーツクラブ</p>
+    </footer>
+
+    <script src="/static/js/base.js"></script>
+    <script src="/static/js/auth.js"></script>
+</body>
+</html>
+

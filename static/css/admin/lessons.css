@@ -1,0 +1,16 @@
+#add-lesson-form > input {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid darkgray;
+}
+
+#add-lesson-form > button {
+    padding: 1rem;
+    font-size: large;
+    font-weight: bold;
+}
+
+#add-lesson-section {
+    max-width: 30rem;
+    width: 100%;
+}

@@ -1,0 +1,181 @@
+/* my/userdetails.css */
+
+
+#user-details > li:nth-child(2n+1), #user-children > li:nth-child(2n) {
+    color: #444444;
+    margin-bottom: 0.5rem;
+}
+
+
+#user-details > li:nth-child(2n), #user-children > li:nth-child(2n+1) {
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    background-color: white;
+}
+
+
+.link-children-signup {
+    background-color: darkgoldenrod;
+    font-size: medium;
+}
+
+.link-children-signup:hover {
+    background-color: rgb(211, 166, 53);
+}
+
+
+#edit-btn {
+    width: 100%;
+    padding: 1rem;
+    background-color: teal;
+    color: white;
+    box-sizing: border-box;
+    border: none;
+}
+
+#edit-btn:hover {
+    background-color: rgb(33, 177, 177);
+}
+
+
+.numbering {
+    width: 100%;
+    border-radius: 5px;
+    background-color: lightgray;
+    text-align: center;
+}
+
+
+@media screen and (max-width: 30rem) {
+    #user-details, #user-children {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 30rem) {
+    #user-details, #user-children {
+        min-width: 30rem;
+    }
+
+    #edit-btn {
+        max-width: 30rem;
+    }
+}
+
+
+
+
+#user-details-edit-form {
+    max-width: 100%;
+}
+
+#user-details-edit-form > input {
+    max-width: 100%;
+}
+
+.half-input {
+    max-width: 49%;
+}
+
+input:invalid:focus {
+    border: 1px solid red;
+}
+
+
+.form-text {
+    text-align: start;
+    margin-left: 1rem;
+}
+
+.form-annotation {
+    margin-left: 1rem;
+    color: white;
+    font-size: small;
+    background-color: violet;
+    padding: 0.2rem;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+
+.form-annotation-1 {
+    margin-left: 1rem;
+    font-size: small;
+    padding: 0.2rem;
+    border-radius: 3px;
+    border: 1px solid gray;
+    box-sizing: border-box;
+}
+
+#sign-up-check-btn {
+    padding: 1rem;
+    font-size: medium;
+    background-color: green;
+    color: white;
+    font-weight: bold;
+    font-size: large;
+    border-radius: 5px;
+    border: 1px solid darkgray;
+    box-sizing: border-box;
+}
+
+#edit-check-btn:hover {
+    background-color: rgb(0, 162, 0);
+}
+
+
+#sign-up-check > li {
+    margin-bottom: 1rem;
+}
+
+#sign-up-check > li:nth-child(odd) {
+    width: max-content;
+}
+
+#sign-up-check > li:nth-child(even) {
+    word-break: break-word;
+}
+
+
+
+#sign-up-btn, #sign-up-cancel-btn {
+    background-color: #1b729e;
+    color: white;
+    pointer-events: auto;
+    padding: 1rem;
+    margin-top: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid darkgray;
+    box-sizing: border-box;
+    font-size: large;
+}
+
+
+#sign-up-btn:hover {
+    background-color: #3594af;
+}
+
+
+#sign-up-cancel-btn {
+    background-color: rgb(211, 58, 27);
+    font-size: medium;
+}
+
+
+#sign-up-cancel-btn:hover {
+    background-color: rgb(223, 82, 69);
+}
+
+.grid-1-2 {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+
+.link-userdetails-edit {
+    background-color: #28822c;
+}
+
+.link-userdetails-edit:hover {
+    background-color: #4CAF50;
+}

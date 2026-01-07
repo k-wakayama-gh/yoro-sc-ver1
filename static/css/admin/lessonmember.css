@@ -1,0 +1,44 @@
+/* admin/lessonmember.css */
+
+table {
+    border-collapse: collapse;
+    background-color: inherit;
+}
+
+tr, th, td {
+    border-color: #555555;
+    border-style: solid;
+    border-width: 0;
+}
+
+tbody > tr:last-child {
+    border-width: 0 0 1px;
+}
+
+/* tbody > tr:nth-of-type(even) {
+    background-color: #f2f2f2;
+} */
+
+
+th, td {
+    padding: 0.5rem;
+}
+
+th {
+    border-top-width: 1px;
+    border-bottom-width: 4px;
+    border-bottom-style: double;
+    text-align: center;
+}
+
+td {
+    text-align: left;
+    white-space: nowrap;
+}
+
+
+#lesson-member-section {
+    max-width: 100%;
+    overflow-x: auto;  /* 横スクロールを許可 */
+    -webkit-overflow-scrolling: touch; /* スマホでスムーズスクロール */
+}

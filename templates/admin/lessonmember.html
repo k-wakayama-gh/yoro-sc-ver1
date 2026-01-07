@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Yoro Sports Club official website">
+    <meta name="author" content="K.W.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="stylesheet" href="/static/css/base.css">
+    <link rel="stylesheet" href="/static/css/admin/lessonmember.css">
+    <title>教室申込一覧</title>
+</head>
+<body>
+    {% include "header.html" %}
+
+    <div id="page-directory-div" class="flex-row">
+        <span><a href="/">ホーム</a></span>
+        <span>＞</span>
+        <span><a href="/admin">管理者ページ</a></span>
+        <span>＞</span>
+        <span>申し込み名簿</span>
+    </div>
+
+    <main class="flex-column-center" style="padding: 0.5rem;">
+
+        {% include "login.html" %}
+
+        <section id="lesson-member-section">
+            <table class="lesson-member-table" data-lesson-id="1">
+                <h2>教室１</h2>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>氏名</th>
+                        <th>ふりがな</th>
+                        <th>電話番号</th>
+                        <th>郵便番号</th>
+                        <th>住所</th>
+                    </tr>
+                </thead>
+                <tbody class="lesson-member-content">
+                    <tr>
+                        <td>1</td>
+                        <td>あああ</td>
+                        <td>いいい</td>
+                        <td>ううう</td>
+                        <td>えええ</td>
+                        <td>おおお</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>あああ</td>
+                        <td>いいい</td>
+                        <td>ううう</td>
+                        <td>えええ</td>
+                        <td>おおお</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>あああ</td>
+                        <td>いいい</td>
+                        <td>ううう</td>
+                        <td>えええ</td>
+                        <td>おおお</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="space"></div>
+            <table class="lesson-member-table" data-lesson-id="2">
+                <h2>教室２</h2>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>氏名</th>
+                        <th>ふりがな</th>
+                        <th>電話番号</th>
+                        <th>郵便番号</th>
+                        <th>住所</th>
+                    </tr>
+                </thead>
+                <tbody class="lesson-member-content">
+                    <tr>
+                        <td>1</td>
+                        <td>あああ</td>
+                        <td>いいい</td>
+                        <td>ううう</td>
+                        <td>えええ</td>
+                        <td>おおお</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>あああ</td>
+                        <td>いいい</td>
+                        <td>ううう</td>
+                        <td>えええ</td>
+                        <td>おおお</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>あああ</td>
+                        <td>いいい</td>
+                        <td>ううう</td>
+                        <td>えええ</td>
+                        <td>おおお</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer id="footer">
+        <p>（一社）養老スポーツクラブ</p>
+    </footer>
+
+    <script src="/static/js/base.js"></script>
+    <script src="/static/js/login.js"></script>
+    <script src="/static/js/admin/lessonmember.js"></script>
+</body>
+</html>

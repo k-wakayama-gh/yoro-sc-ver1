@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Yoro Sports Club official website">
+    <meta name="author" content="K.W.">
+    <link rel="stylesheet" href="/static/css/base.css">
+    <link rel="stylesheet" href="/static/css/signup.css">
+    <link rel="stylesheet" href="/static/css/my/childrensignup.css">
+    <title>お子さん登録</title>
+</head>
+<body>
+    {% include "header.html" %}
+
+    <div id="page-directory-div" class="flex-row">
+        <span><a href="/">ホーム</a></span>
+        <span>＞</span>
+        <span><a href="/my">マイページ</a></span>
+        <span>＞</span>
+        <span><a href="/my/userdetails">利用者情報</a></span>
+        <span>＞</span>
+        <span>お子さん登録</span>
+    </div>
+
+    <main class="flex-column-center">
+        <h2>お子さん登録</h2>
+        <p class="on-logout">保護者の方のアカウントでログインしてください</p>
+
+        {% include "login.html" %}
+
+        <section id="children-signup-form-section" class="on-login full-width">
+
+            <div class="space"></div>
+            
+            <div id="children-signup-form">
+                <div id="select-number-of-children-div">
+                    <h3>新しく登録する人数</h3>
+                    <div id="select-number-of-children" class="flex-row-between" style="padding: 0 1rem; font-size: large;">
+                        <span class="number-btn" data-number="1">１</span>
+                        <span class="number-btn" data-number="2">２</span>
+                        <span class="number-btn" data-number="3">３</span>
+                        <span class="number-btn" data-number="4">４</span>
+                        <span class="number-btn" data-number="5">５</span>
+                    </div>
+                    <div id="counter" class="hidden">1</div>
+                </div>
+                <div class="space"></div>
+                <div id="children-name-div">
+                    <div class="each-child">
+                        <p class="numbering">１</p>
+                        <form>
+                            <div class="form-text">氏名<span class="form-annotation">必須</span></div>
+                            <div class="flex-row-between">
+                                <input type="text" name="last_name" placeholder="姓" required class="half-input">
+                                <input type="text" name="first_name" placeholder="名" required class="half-input">
+                            </div>
+                            <div class="form-text">ふりがな<span class="form-annotation">必須</span></div>
+                            <div class="flex-row-between">
+                                <input type="text" inputmode="kana-name" name="last_name_furigana" placeholder="ふりがな (姓)" required class="half-input">
+                                <input type="text" inputmode="kana-name" name="first_name_furigana" placeholder="ふりがな (名)" required class="half-input">
+                            </div>
+                        </form>
+                        <div class="space"></div>
+                    </div>
+                    <div class="each-child hidden">
+                        <p class="numbering">２</p>
+                        <form>
+                            <div class="form-text">氏名<span class="form-annotation">必須</span></div>
+                            <div class="flex-row-between">
+                                <input type="text" name="last_name" placeholder="姓" required class="half-input">
+                                <input type="text" name="first_name" placeholder="名" required class="half-input">
+                            </div>
+                            <div class="form-text">ふりがな<span class="form-annotation">必須</span></div>
+                            <div class="flex-row-between">
+                                <input type="text" inputmode="kana-name" name="last_name_furigana" placeholder="ふりがな (姓)" required class="half-input">
+                                <input type="text" inputmode="kana-name" name="first_name_furigana" placeholder="ふりがな (名)" required class="half-input">
+                            </div>
+                        </form>
+                        <div class="space"></div>
+                    </div>
+                    <div class="each-child hidden">
+                        <p class="numbering">３</p>
+                        <form>
+                            <div class="form-text">氏名<span class="form-annotation">必須</span></div>
+                            <div class="flex-row-between">
+                                <input type="text" name="last_name" placeholder="姓" required class="half-input">
+                                <input type="text" name="first_name" placeholder="名" required class="half-input">
+                            </div>
+                            <div class="form-text">ふりがな<span class="form-annotation">必須</span></div>
+                            <div class="flex-row-between">
+                                <input type="text" inputmode="kana-name" name="last_name_furigana" placeholder="ふりがな (姓)" required class="half-input">
+                                <input type="text" inputmode="kana-name" name="first_name_furigana" placeholder="ふりがな (名)" required class="half-input">
+                            </div>
+                        </form>
+                        <div class="space"></div>
+                    </div>
+                    <div class="each-child hidden">
+                        <p class="numbering">４</p>
+                        <form>
+                            <div class="form-text">氏名<span class="form-annotation">必須</span></div>
+                            <div class="flex-row-between">
+                                <input type="text" name="last_name" placeholder="姓" required class="half-input">
+                                <input type="text" name="first_name" placeholder="名" required class="half-input">
+                            </div>
+                            <div class="form-text">ふりがな<span class="form-annotation">必須</span></div>
+                            <div class="flex-row-between">
+                                <input type="text" inputmode="kana-name" name="last_name_furigana" placeholder="ふりがな (姓)" required class="half-input">
+                                <input type="text" inputmode="kana-name" name="first_name_furigana" placeholder="ふりがな (名)" required class="half-input">
+                            </div>
+                        </form>
+                        <div class="space"></div>
+                    </div>
+                    <div class="each-child hidden">
+                        <p class="numbering">５</p>
+                        <form>
+                            <div class="form-text">氏名<span class="form-annotation">必須</span></div>
+                            <div class="flex-row-between">
+                                <input type="text" name="last_name" placeholder="姓" required class="half-input">
+                                <input type="text" name="first_name" placeholder="名" required class="half-input">
+                            </div>
+                            <div class="form-text">ふりがな<span class="form-annotation">必須</span></div>
+                            <div class="flex-row-between">
+                                <input type="text" inputmode="kana-name" name="last_name_furigana" placeholder="ふりがな (姓)" required class="half-input">
+                                <input type="text" inputmode="kana-name" name="first_name_furigana" placeholder="ふりがな (名)" required class="half-input">
+                            </div>
+                        </form>
+                        <div class="space"></div>
+                    </div>
+                    <button type="button" id="signup-check-btn" class="full-width">以上の内容を登録する</button>
+                </div>
+            </div>
+            <div class="flex-column full-width">
+                <div id="signup-check-div" class="hidden full-width"></div>
+                <button type="button" id="signup-btn" class="hidden">登録する</button>
+                <div class="space"></div>
+                <button type="button" id="signup-cancel-btn" class="hidden">やめる</button>
+            </div>
+        </section>
+
+        <div class="space"></div>
+
+        <hr class="full-width">
+
+        <div class="space"></div>
+
+        <a href="/my/userdetails" class="a-btn">利用者情報を確認する</a>
+    </main>
+
+    <footer id="footer">
+        <p>（一社）養老スポーツクラブ</p>
+    </footer>
+
+    <script src="/static/js/base.js"></script>
+    <script src="/static/js/login.js"></script>
+    <script src="/static/js/my/childrensignup.js"></script>
+</body>
+</html>

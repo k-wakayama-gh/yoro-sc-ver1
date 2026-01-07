@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Yoro Sports Club official website">
+    <meta name="author" content="K.W.">
+    <link rel="stylesheet" href="/static/css/base.css">
+    <link rel="stylesheet" href="/static/css/signup.css">
+    <title>利用者登録</title>
+</head>
+<body>
+    {% include "header.html" %}
+
+    <div id="page-directory-div" class="flex-row">
+        <span><a href="/">ホーム</a></span>
+        <span>＞</span>
+        <span>利用者登録</span>
+    </div>
+
+    <main class="flex-column-center">
+        <div class="auth-form-div flex-column">
+            <section id="sign-up-form-section" class="flex-column">
+                <h1 class="text-center">利用者登録</h1>
+                <p style="text-align: start;">①「からだあそび教室」へ申し込まれる方は、保護者のお名前を入力してください。</p>
+                <div class="space"></div>
+                <form id="sign-up-form" class="flex-column">
+                    <div class="form-text">氏名<span class="form-annotation">必須</span></div>
+                    <div class="flex-row-between">
+                        <input type="text" name="last_name" placeholder="姓" required class="half-input">
+                        <input type="text" name="first_name" placeholder="名" required class="half-input">
+                    </div>
+                    <div class="space"></div>
+                    <div class="form-text">ふりがな<span class="form-annotation">必須</span></div>
+                    <div class="flex-row-between">
+                        <input type="text" inputmode="kana-name" name="last_name_furigana" placeholder="ふりがな (姓)" required class="half-input">
+                        <input type="text" inputmode="kana-name" name="first_name_furigana" placeholder="ふりがな (名)" required class="half-input">
+                    </div>
+                    <div class="space"></div>
+                    <div class="form-text">電話番号<span class="form-annotation">必須</span></div>
+                    <input type="tel" name="tel" placeholder="電話番号 (できれば携帯電話)" required>
+                    <div class="space"></div>
+                    <div class="form-text">郵便番号<span class="form-annotation">必須</span></div>
+                    <input type="tel" name="postal_code" placeholder="郵便番号" required>
+                    <div class="space"></div>
+                    <div class="form-text">住所<span class="form-annotation">必須</span></div>
+                    <input type="text" name="address" placeholder="住所" required>
+                    <div class="space"></div>
+                    <div class="form-text">メールアドレス<span class="form-annotation-1">任意</span></div>
+                    <input type="email" name="email" placeholder="メールアドレス" oninput="autoInputUsername(this)" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
+                    <!-- <div class="form-text" style="font-size: small; color: gray;">-> 申し込みの確認メールを受け取れます</div> -->
+                    <div class="space"></div>
+                    <div class="form-text">ユーザー名<span class="form-annotation">必須</span></div>
+                    <input type="text" inputmode="latin" name="username" id="username-input" placeholder="ユーザー名" pattern="^[a-zA-Z0-9._@-]{4,}$" required>
+                    <div class="form-text" style="font-size: small; color: gray;">-> 本人確認に使用します　半角英数字4文字以上</div>
+                    <div class="space"></div>
+                    <div class="form-text">パスワード<span class="form-annotation">必須</span></div>
+                    <input type="password" inputmode="latin" name="password" placeholder="パスワード" pattern="^([a-zA-Z0-9]{4,})$" required>
+                    <div class="form-text" style="font-size: small; color: gray;">-> 本人確認に使用します　半角英数字4文字以上</div>
+                    <div class="space"></div>
+                    <button type="button" id="sign-up-check-btn">内容を確認する</button>
+                </form>
+                <div id="sign-up-check-div" class="hidden"></div>
+                <button type="button" id="sign-up-btn" class="hidden">以上の内容で登録する</button>
+                <div class="space"></div>
+                <button type="button" id="sign-up-cancel-btn" class="hidden">内容を変更する</button>
+            </section>
+        </div>
+
+        <div class="space"></div>
+
+    </main>
+
+    <footer id="footer">
+        <p>（一社）養老スポーツクラブ</p>
+    </footer>
+
+    <script src="/static/js/base.js"></script>
+    <script src="/static/js/signup.js"></script>
+</body>
+</html>

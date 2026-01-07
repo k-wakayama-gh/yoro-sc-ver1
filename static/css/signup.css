@@ -1,0 +1,115 @@
+/* signup.css */
+
+#sign-up-form {
+    max-width: 100%;
+}
+
+#sign-up-form > input {
+    max-width: 100%;
+}
+
+form > .flex-row-between {
+    gap: 1rem;
+    max-width: 100%;
+}
+
+.half-input {
+    /* max-width: 49%; */
+    /* flex-grow: 1; */
+    width: 48%;
+}
+
+input:invalid:focus {
+    border: 1px solid red;
+}
+
+
+.form-text {
+    text-align: start;
+    /* margin-left: 1rem; */
+}
+
+.form-annotation {
+    margin-left: 1rem;
+    color: white;
+    font-size: small;
+    background-color: violet;
+    padding: 0.2rem;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+
+.form-annotation-1 {
+    margin-left: 1rem;
+    font-size: small;
+    padding: 0.2rem;
+    border-radius: 3px;
+    border: 1px solid gray;
+    box-sizing: border-box;
+}
+
+#sign-up-check-btn {
+    padding: 1rem;
+    font-size: medium;
+    background-color: green;
+    color: white;
+    font-weight: bold;
+    font-size: large;
+    border-radius: 5px;
+    border: 1px solid darkgray;
+    box-sizing: border-box;
+}
+
+#sign-up-check-btn:hover {
+    background-color: rgb(0, 162, 0);
+}
+
+
+#sign-up-check > li {
+    margin-bottom: 1rem;
+}
+
+#sign-up-check > li:nth-child(odd) {
+    width: max-content;
+}
+
+#sign-up-check > li:nth-child(even) {
+    word-break: break-word;
+}
+
+
+
+#sign-up-btn, #sign-up-cancel-btn {
+    background-color: #1b729e;
+    color: white;
+    pointer-events: auto;
+    padding: 1rem;
+    margin-top: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid darkgray;
+    box-sizing: border-box;
+    font-size: large;
+}
+
+
+#sign-up-btn:hover {
+    background-color: #3594af;
+}
+
+
+#sign-up-cancel-btn {
+    background-color: rgb(211, 58, 27);
+    font-size: medium;
+}
+
+
+#sign-up-cancel-btn:hover {
+    background-color: rgb(223, 82, 69);
+}
+
+.grid-1-2 {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/css/base.css">
+    <title>ログ管理</title>
+    <style>
+        body {
+        font-family: sans-serif;
+        background-color: #f7f7f7;
+        }
+        h1 {
+        text-align: center;
+        margin-bottom: 20px;
+        }
+        table {
+        width: 100%;
+        border-collapse: collapse;
+        background-color: white;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        th, td {
+        border: 1px solid #ddd;
+        padding: 8px 10px;
+        text-align: left;
+        }
+        th {
+        background-color: #efefef;
+        }
+        tr:nth-child(even) {
+        background-color: #fafafa;
+        }
+        .action-apply {
+        color: green;
+        font-weight: bold;
+        }
+        .action-cancel {
+        color: red;
+        font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    {% include "header.html" %}
+    <div id="page-directory-div" class="flex-row">
+        <span><a href="/">ホーム</a></span>
+        <span>＞</span>
+        <span><a href="/admin">管理者ページ</a></span>
+        <span>＞</span>
+        <span>ログ</span>
+    </div>
+
+    {% include "login.html" %}
+
+    <h1>申し込み・キャンセル履歴</h1>
+    <table id="log-table">
+        <thead>
+        <tr>
+            <th>日時</th>
+            <th>アクション</th>
+            <th>番号</th>
+            <th>教室名</th>
+            <th>名前</th>
+            <th>電話番号</th>
+            <th>住所</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr><td colspan="7">読み込み中...</td></tr>
+        </tbody>
+    </table>
+    
+    <script src="/static/js/base.js"></script>
+    <script src="/static/js/login.js"></script>
+
+    <script>
+        async function loadLogs() {
+            const token = loadAccessToken();
+            const tbody = document.querySelector("#log-table tbody");
+            try {
+                const res = await fetch("/json/admin/logs", {
+                    method: "GET",
+                    headers: {"Content-Type": "application/json", "Authorization": "Bearer " + token}
+                });
+                let data = await res.json();
+    
+                if (data.length === 0) {
+                    tbody.innerHTML = "<tr><td colspan='7'>ログはまだありません</td></tr>";
+                    return;
+                }
+    
+                // ★ 追加：timestampで降順ソート（新しいものが先頭）
+                data.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
+    
+                tbody.innerHTML = data.map(log => `
+                <tr>
+                    <td>${new Date(log.timestamp).toLocaleString("ja-JP")}</td>
+                    <td class="${log.action === "apply" ? "action-apply" : "action-cancel"}">
+                        ${log.action === "apply" ? "申込" : "キャンセル"}
+                    </td>
+                    <td>${log.lesson_number}</td>
+                    <td>${log.lesson_title}</td>
+                    <td>${log.user_name}</td>
+                    <td>${log.user_tel}</td>
+                    <td>${log.user_address}</td>
+                </tr>
+                `).join("");
+            } catch (error) {
+                tbody.innerHTML = `<tr><td colspan='7'>読み込みエラー: ${error}</td></tr>`;
+            }
+        }
+    
+        loadLogs();
+    </script>
+</body>
+</html>

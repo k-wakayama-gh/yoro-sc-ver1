@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A website created by K.W.">
+    <meta name="author" content="K.W.">
+    <link rel="stylesheet" href="/static/css/base.css">
+    <link rel="stylesheet" href="/static/css/my/userdetails.css">
+    <title>利用者情報</title>
+</head>
+<body>
+    {% include "header.html" %}
+
+    <div id="page-directory-div" class="flex-row">
+        <span><a href="/">ホーム</a></span>
+        <span>＞</span>
+        <span><a href="/my">マイページ</a></span>
+        <span>＞</span>
+        <span>利用者情報</span>
+    </div>
+
+    <main class="flex-column-center">
+
+        <h2 class="text-center">利用者情報</h2>
+
+        {% include "login.html" %}
+
+        <div class="space"></div>
+        
+        <section id="user-detail-section" class="flex-column">
+            <ul id="user-details" class="flex-column">
+                <p>読み込み中...</p>
+            </ul>
+
+            <div class="space"></div>
+            <h2>お子さんの情報</h2>
+            <ul id="user-children" class="flex-column">
+                <p>読み込み中...</p>
+            </ul>
+
+            <hr class="full-width">
+
+            <div class="space"></div>
+            
+            <!-- <button id="edit-btn">登録内容を変更する</button> -->
+            <a href="/my/userdetails/edit" class="a-btn link-userdetails-edit">利用者の情報を編集する</a>
+
+            <div class="space"></div>
+
+            <a href="/my/childrensignup" class="a-btn link-children-signup">お子さんの情報を追加する</a>
+        </section>
+
+        <div class="space"></div>
+        
+        <section id="user-detail-edit-section" class="flex-column-center full-width hidden">
+            <h2>編集フォーム</h2>
+            <form id="user-details-edit-form" class="flex-column">
+            </form>
+        </section>
+    </main>
+
+    <footer id="footer">
+        <p>（一社）養老スポーツクラブ</p>
+    </footer>
+
+    <script src="/static/js/base.js"></script>
+    <script src="/static/js/login.js"></script>
+    <script src="/static/js/my/userdetails.js"></script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Yoro Sports Club official website">
+        <meta name="author" content="K.W.">
+        <meta name="robots" content="noindex, nofollow">
+        <link rel="stylesheet" href="/static/css/base.css">
+        <link rel="stylesheet" href="/static/css/admin/users.css">
+        <title>ユーザー一覧</title>
+    </head>
+    <body>
+        {% include "header.html" %}
+
+        <div id="page-directory-div" class="flex-row">
+            <span><a href="/">ホーム</a></span>
+            <span>＞</span>
+            <span><a href="/admin">管理者ページ</a></span>
+            <span>＞</span>
+            <span>ユーザー一覧</span>
+        </div>
+
+        <main class="flex-column-center">
+
+            {% include "login.html" %}
+
+            <section class="patch-user-info on-login">
+                <h2>パスワード変更</h2>
+                <form id="patch-user-info-form">
+                    <input type="text" id="username-input" name="username-input" placeholder="ユーザー名" pattern="^[a-zA-Z0-9._@-]{4,}$" required>
+                    <input type="text" id="new-password-input" name="new-password-input" placeholder="新しいパスワード" pattern="^([a-zA-Z0-9]{4,})$" required>
+                    <button type="button" id="patch-user-info-btn">パスワード変更</button>
+                </form>
+                <p id="form-error-p" class="hidden" style="color: red;">パスワードの変更に失敗しました。パスワードは４文字以上必要です。一部の記号は使用できません。</p>
+                <p id="success-change-password-p" class="hidden" style="color: green;">パスワードを変更しました。</p>
+                <p id="fail-change-password-p" class="hidden" style="color: red;">パスワードの変更に失敗しました。</p>
+            </section>
+
+            <div class="space"></div>
+
+            <section id="user-list-section" class="on-login">
+                <h2>ユーザー一覧</h2>
+                <p>読み込み中・・・</p>
+                <table class="dummy-table"></table>
+            </section>
+        </main>
+
+        <footer id="footer">
+            <p>（一社）養老スポーツクラブ</p>
+        </footer>
+
+        <script src="/static/js/base.js"></script>
+        <script src="/static/js/login.js"></script>
+        <script src="/static/js/admin/users.js"></script>
+    </body>
+</html>

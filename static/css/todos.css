@@ -1,0 +1,266 @@
+/* todos.css */
+
+:root {
+    --text-color: #333;
+    --bg-color: #f4f4f4;
+    --bg-color-accent: #fff;
+    --border-form: 1px solid #ccc;
+    --btn-green: #45a049;
+    --btn-green-hover: #4CAF50;
+    --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode {
+    --text-color: #f0f0f0;
+    --bg-color: #141414;
+    --bg-color-accent: #202020;
+    --border-form: 1px solid #888888;
+    --btn-green: #1b831b;
+    --btn-green-hover: #19a219;
+    --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.space {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+h1, h2 {
+    color: var(--text-color);
+    text-align: center;
+}
+
+ul {
+    /* remove default list styles and the margin on the left */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+input, textarea {
+    font-size: medium;
+    color: var(--text-color);
+    background-color: var(--bg-color-accent);
+    border: var(--border-form);
+    border-radius: 5px;
+    box-sizing: border-box; /* ボックスモデルの設定：ボーダーをサイズに含める */
+}
+
+textarea {
+    resize: none;
+    font-family: inherit;
+}
+
+button {
+    font-size: small;
+    cursor: pointer;
+}
+
+a {
+    color: #20a7cd;
+}
+
+a:visited {
+    color: #dcac1d;
+}
+
+body {
+    font-family: sans-serif;
+    font-size: medium;
+    overflow-y: scroll;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+#app {
+    align-items: center;
+    padding: 0 0.6rem; /* do not set width with this padding here */
+}
+
+header {
+    position: relative;
+}
+
+/* main width: subject to chagnge on responsive design */
+main {
+    width: 100%;
+}
+
+footer {
+    padding: 1rem 0;
+    margin-top: 2rem;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    text-align: center;
+}
+
+
+/* main contents below */
+
+
+#todo-list > li {
+    padding: 0.8rem;
+    margin-bottom: 0.8rem;
+    border-radius: 5px;
+    box-shadow: var(--box-shadow);
+    background-color: var(--bg-color-accent);
+}
+
+
+.todo-list-content {
+    white-space: pre-wrap;
+}
+
+
+.dummy-todo-li {
+    height: 9rem;
+}
+
+
+/* classによるスタイルはidによるスタイルで上書きされる */
+
+
+#add-todo-form > input,
+#add-todo-form > textarea {
+    padding: 0.6rem;
+    margin: 0.4rem 0;
+    width: 100%;
+}
+
+#add-todo-form > button {
+    padding: 0.6rem;
+    margin: 0.4rem 0;
+    border: var(--border-form);
+    border-radius: 5px;
+    width: 100%;
+}
+
+#add-todo-form-btn {
+    background-color: var(--btn-green);
+    color: white;
+    pointer-events: auto;
+}
+
+#add-todo-form-btn:hover {
+    background-color: var(--btn-green-hover);
+}
+
+
+
+.todo-action-section button {
+    margin-right: 1rem;
+}
+
+
+
+.edit-form {
+    margin-top: 1rem;
+}
+
+.edit-form > input {
+    padding: 0.6rem;
+    margin-bottom: 0.6rem;
+    width: 100%;
+}
+
+.edit-form > textarea {
+    padding: 0.6rem;
+    margin-bottom: 0.4rem;
+    width: 100%;
+}
+
+
+
+#login-form {
+    align-items: center;
+}
+
+#login-form > input {
+    padding: 0.6rem; /* 0.5rem equals 8px if font size is 16px */
+    margin: 0.4rem 0;
+    width: 60%;
+}
+
+#login-btn {
+    background-color: #4c99af;
+    color: white;
+    pointer-events: auto;
+    padding: 0.6rem;
+    margin: 0.4rem 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    width: 60%;
+}
+
+#login-btn:hover {
+    background-color: #236180;
+}
+
+
+#sign-up-form {
+    align-items: center;
+}
+
+#sign-up-form > input {
+    padding: 0.6rem;
+    margin: 0.4rem 0;
+    width: 60%;
+}
+
+#sign-up-btn {
+    background-color: #4c99af;
+    color: white;
+    pointer-events: auto;
+    padding: 0.6rem;
+    margin: 0.4rem 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    width: 60%;
+}
+
+#sign-up-btn:hover {
+    background-color: #236180;
+}
+
+
+/* main contents above */
+
+
+/* hidden must be last */
+.hidden {
+    display: none;
+}
+
+
+
+/* responsive design for PC */
+@media (min-width: 1080px) {
+    main {
+        width: 40%;
+    }
+}
+
+
+/* exceptional dark mode */
+@media (prefers-color-scheme: dark) {
+    /* pass */
+}
+

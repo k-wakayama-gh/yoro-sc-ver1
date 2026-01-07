@@ -1,0 +1,25 @@
+/* /my/userdetails/edit.css */
+
+#save-btn {
+    background-color: #28822c;
+    color: white;
+    font-weight: bold;
+    font-size: larger;
+    padding: 1.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: var(--box-shadow);
+    box-sizing: border-box;
+}
+
+#save-btn:hover {
+    background-color: #4CAF50;
+    box-shadow: none;
+}
+
+#status-message {
+    font-weight: bold;
+    color: darkgreen;
+}

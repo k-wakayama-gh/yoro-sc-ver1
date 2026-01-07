@@ -1,0 +1,7 @@
+database.sqlite
+notes.txt
+logs.json
+__pycache__/
+/.github/
+/venv/
+*.pyc

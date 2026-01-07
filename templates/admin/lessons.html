@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Yoro Sports Club official website">
+    <meta name="author" content="K.W.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="stylesheet" href="/static/css/base.css">
+    <link rel="stylesheet" href="/static/css/lessons.css">
+    <link rel="stylesheet" href="/static/css/admin/lessons.css">
+    <title>教室管理画面</title>
+</head>
+<body>
+    {% include "header.html" %}
+
+    <div id="page-directory-div" class="flex-row">
+        <span><a href="/">ホーム</a></span>
+        <span>＞</span>
+        <span><a href="/admin">管理者ページ</a></span>
+        <span>＞</span>
+        <span>教室一覧</span>
+    </div>
+
+    <main class="flex-column-center">
+
+        {% include "login.html" %}
+
+        <section id="lesson-list-section" class="flex-column-center-inline on-login">
+            <h1>2025年度　後期</h1>
+
+            <div class="space"></div>
+
+            <ul id="lesson-list" class="flex-column">
+                <li class="dummy-li"></li>
+                <li class="dummy-li"></li>
+                <li class="dummy-li"></li>
+                <li class="dummy-li"></li>
+                <li class="dummy-li"></li>
+                <li class="dummy-li"></li>
+                <li class="dummy-li"></li>
+                <li class="dummy-li"></li>
+                <li class="dummy-li"></li>
+                <li class="dummy-li"></li>
+                <li class="dummy-li"></li>
+                <li class="dummy-li"></li>
+            </ul>
+        </section>
+
+        <div class="space"></div>
+
+        <section class="on-login">
+            <button id="refresh-capacity" type="button">定員残り更新</button>
+        </section>
+
+        <div class="space"></div>
+
+        <section class="on-login">
+            <h1>教室を追加する</h1>
+            <form id="add-lessons-all-form">
+                <input id="api-url" type="text" name="gas_api" placeholder="GAS API with password">
+                <button id="add-lessons-all-btn" type="button">教室を追加する</button>
+            </form>
+        </section>
+
+        <div class="space"></div>
+
+        <section id="add-lesson-section" class="hidden">
+            <h1>教室を追加する</h1>
+            <form id="add-lesson-form" class="flex-column">
+                <input type="tel" inputmode="tel" name="year" placeholder="年度">
+                <input type="tel" inputmode="tel" name="season" placeholder="前期=>1, 後期=>2">
+                <input type="tel" inputmode="tel" name="number" placeholder="教室番号">
+                <input type="text" name="title" placeholder="教室名">
+                <input type="text" name="teacher" placeholder="講師">
+                <input type="text" name="day" placeholder="曜日（１文字）">
+                <input type="text" name="time" placeholder="時間">
+                <input type="tel" inputmode="tel" name="price" placeholder="参加費">
+                <input type="text" name="description" placeholder="コメント">
+                <input type="tel" inputmode="tel" name="capacity" placeholder="定員">
+                <input type="tel" inputmode="tel" name="lessons" placeholder="回数">
+                <button id="add-lesson-btn" type="submit">教室を追加する</button>
+            </form>
+        </section>
+    </main>
+
+    <footer id="footer">
+        <p>（一社）養老スポーツクラブ</p>
+    </footer>
+
+    <script src="/static/js/base.js"></script>
+    <script src="/static/js/login.js"></script>
+    <script src="/static/js/admin/lessons.js"></script>
+</body>
+</html>
+
