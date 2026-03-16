@@ -90,10 +90,10 @@ async function renderLessons() {
         let numberColor = "gray";
         if (lesson.number <= 1) {
             numberColor = "#a44d3a";
-        } else if (lesson.number >= 100) {
-            numberColor = "#dcbd24";
-        } else {
+        } else if (lesson.number <= 9) {
             numberColor = "#4379a6";
+        } else {
+            numberColor = "#dcbd24";
         };
 
         // let capacity_left = lesson.capacity;

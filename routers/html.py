@@ -143,3 +143,14 @@ def get_signup_complete_html(request: Request):
     }
     return templates.TemplateResponse(html_file, context)
 
+
+
+# 2026 early Machinaka Daigaku Syllabus
+@router.get("/2026/machinaka-daigaku", response_class=HTMLResponse, tags=["html"])
+def get_index_html(request: Request):
+    html_file = "/2026/machinaka_syllabus.html"
+    context = {
+        "request": request,
+    }
+    return templates.TemplateResponse(html_file, context)
+
