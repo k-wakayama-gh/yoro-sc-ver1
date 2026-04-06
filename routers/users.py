@@ -317,9 +317,8 @@ def json_get_my_children(session: Annotated[Session, Depends(get_session)], curr
 def get_my_user_details_html(request: Request):
     html_file = "my/userdetails.html"
     context = {
-        'request': request,
     }
-    return templates.TemplateResponse(html_file, context)
+    return templates.TemplateResponse(request=request, name=html_file, context=context)
 
 
 
@@ -328,9 +327,8 @@ def get_my_user_details_html(request: Request):
 def get_children_signup_page_html(request: Request):
     html_file = "my/childrensignup.html"
     context = {
-        "request": request,
     }
-    return templates.TemplateResponse(html_file, context)
+    return templates.TemplateResponse(request=request, name=html_file, context=context)
 
 
 
@@ -339,9 +337,8 @@ def get_children_signup_page_html(request: Request):
 def get_users_html_admin(request: Request):
     html_file = "admin/users.html"
     context = {
-        "request": request,
     }
-    return templates.TemplateResponse(html_file, context)
+    return templates.TemplateResponse(request=request, name=html_file, context=context)
 
 
 
@@ -433,9 +430,8 @@ def admin_user_search(
 def get_user_search_html_admin(request: Request):
     html_file = "admin/user_search.html"
     context = {
-        "request": request,
     }
-    return templates.TemplateResponse(html_file, context)
+    return templates.TemplateResponse(request=request, name=html_file, context=context)
 
 
 
@@ -444,8 +440,7 @@ def get_user_search_html_admin(request: Request):
 def get_edit_my_userdetails_html(request: Request):
     html_file = "my/userdetails/edit.html"
     context = {
-        "request": request,
     }
-    return templates.TemplateResponse(html_file, context)
+    return templates.TemplateResponse(request=request, name=html_file, context=context)
 
 

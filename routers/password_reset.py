@@ -109,9 +109,8 @@ def reset_password(request: PasswordResetConfirm, session: Annotated[Session, De
 def get_password_reset_html(request: Request):
     html_file = "password_reset.html"
     context = {
-        "request": request,
     }
-    return templates.TemplateResponse(html_file, context)
+    return templates.TemplateResponse(request=request, name=html_file, context=context)
 
 
 
@@ -120,8 +119,7 @@ def get_password_reset_html(request: Request):
 def get_password_reset_html_admin(request: Request):
     html_file = "admin/password_reset.html"
     context = {
-        "request": request,
     }
-    return templates.TemplateResponse(html_file, context)
+    return templates.TemplateResponse(request=request, name=html_file, context=context)
 
 

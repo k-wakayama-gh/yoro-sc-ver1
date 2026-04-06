@@ -29,10 +29,9 @@ templates = Jinja2Templates(directory="templates")
 def get_index_html(request: Request):
     html_file = "index.html"
     context = {
-        "request": request,
         "title": "ホーム｜(一社)養老スポーツクラブ",
     }
-    return templates.TemplateResponse(html_file, context)
+    return templates.TemplateResponse(request=request, name=html_file, context=context)
 
 
 
@@ -41,9 +40,8 @@ def get_index_html(request: Request):
 def get_my_html(request: Request):
     html_file = "my.html"
     context = {
-        "request": request,
     }
-    return templates.TemplateResponse(html_file, context)
+    return templates.TemplateResponse(request=request, name=html_file, context=context)
 
 
 
@@ -52,9 +50,8 @@ def get_my_html(request: Request):
 def get_user_signup_html(request: Request):
     html_file = "signup.html"
     context = {
-        "request": request,
     }
-    return templates.TemplateResponse(html_file, context)
+    return templates.TemplateResponse(request=request, name=html_file, context=context)
 
 
 
@@ -63,9 +60,8 @@ def get_user_signup_html(request: Request):
 def get_signup_complete_html(request: Request):
     html_file = "signupcomplete.html"
     context = {
-        "request": request,
     }
-    return templates.TemplateResponse(html_file, context)
+    return templates.TemplateResponse(request=request, name=html_file, context=context)
 
 
 
@@ -74,9 +70,8 @@ def get_signup_complete_html(request: Request):
 def get_admin_html(request: Request):
     html_file = "admin.html"
     context = {
-        "request": request,
     }
-    return templates.TemplateResponse(html_file, context)
+    return templates.TemplateResponse(request=request, name=html_file, context=context)
 
 
 
@@ -139,9 +134,8 @@ def get_logs_json(current_user: Annotated[Session, Depends(get_current_active_us
 def get_signup_complete_html(request: Request):
     html_file = "/admin/logs.html"
     context = {
-        "request": request,
     }
-    return templates.TemplateResponse(html_file, context)
+    return templates.TemplateResponse(request=request, name=html_file, context=context)
 
 
 
@@ -150,7 +144,6 @@ def get_signup_complete_html(request: Request):
 def get_index_html(request: Request):
     html_file = "/2026/machinaka_syllabus.html"
     context = {
-        "request": request,
     }
-    return templates.TemplateResponse(html_file, context)
+    return templates.TemplateResponse(request=request, name=html_file, context=context)
 

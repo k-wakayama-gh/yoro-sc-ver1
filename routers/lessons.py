@@ -65,11 +65,10 @@ def display_lessons_sync(session: Annotated[Session, Depends(get_session)], quer
     html_file = "lessons.html"
     lessons = session.exec(select(Lesson).offset(query.offset).limit(query.limit)).all()
     context = {
-        "request": request,
         "lessons": lessons,
         "title": "教室一覧",
     }
-    return templates.TemplateResponse(html_file, context)
+    return templates.TemplateResponse(request=request, name=html_file, context=context)
 
 
 
@@ -79,9 +78,8 @@ def display_lessons_sync(session: Annotated[Session, Depends(get_session)], quer
 def get_lessons_html(request: Request):
     html_file = "lessons.html"
     context = {
-        "request": request,
     }
-    return templates.TemplateResponse(html_file, context)
+    return templates.TemplateResponse(request=request, name=html_file, context=context)
 
 
 
@@ -301,9 +299,8 @@ def create_my_lessons_for_children(
 def get_my_lessons_html(request: Request):
     html_file = "my/lessons.html"
     context = {
-        "request": request,
     }
-    return templates.TemplateResponse(html_file, context)
+    return templates.TemplateResponse(request=request, name=html_file, context=context)
 
 
 
@@ -312,9 +309,8 @@ def get_my_lessons_html(request: Request):
 def get_admin_lessons_html(request: Request):
     html_file = "admin/lessons.html"
     context = {
-        "request": request,
     }
-    return templates.TemplateResponse(html_file, context)
+    return templates.TemplateResponse(request=request, name=html_file, context=context)
 
 
 
@@ -427,8 +423,10 @@ def admin_json_read_users_of_every_lessons(session: Annotated[Session, Depends(g
 # admin: display lesson member list
 @router.get("/admin/lessons/users", tags={"Lesson"})
 def admin_display_users_of_every_lessons(request: Request):
-    context = {"request": request}
-    return templates.TemplateResponse("admin/lessonmember.html", context)
+    html_file = "admin/lessonmember.html"
+    context = {
+    }
+    return templates.TemplateResponse(request=request, name=html_file, context=context)
 
 
 

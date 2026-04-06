@@ -107,8 +107,7 @@ def upsert_period(
 def get_period_html_admin(request: Request):
     html_file = "admin/settings.html"
     context = {
-        "request": request,
     }
-    return templates.TemplateResponse(html_file, context)
+    return templates.TemplateResponse(request=request, name=html_file, context=context)
 
 
