@@ -29,8 +29,8 @@ async function renderLessons() {
     const my_children = await fetch_my_children_in_current_lesson();
     const lessonList = document.getElementById("lesson-list");
 
-    const current_year = 2025;
-    const current_season = 2;
+    const current_year = 2026;
+    const current_season = 1;
 
     // clear the previous lesson list
     lessonList.textContent = "";
