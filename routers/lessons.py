@@ -729,7 +729,7 @@ def json_confirmation_message_lesson(
         child_list = lesson.user_children
     message_list = []
     number_symbol = ["None","①", "②", "③", "④", "⑤", "⑥", "⑦","⑧", "⑨", "⑩", "⑪", "⑫", "⑬"]
-    first_date_list = ["初回日", "10/10(金)", "10/8(水)", "10/8(水)", "10/2(木)", "10/9(木)", "10/9(木)", "10/10(金)", "10/2(木)", "10/9(木)", "10/2(木)13:30", "10/2(木)14:30", "10/9(木)13:30", "10/9(木)14:30"]
+    first_date_list = ["初回日", "5/8(金)", "5/13(水)", "5/13(水)", "5/7(木)", "5/7(木)", "5/7(木)", "5/14(木)", "5/14(木)", "5/14(木)", "5/13(水)", "10/2(木)14:30", "10/9(木)13:30", "10/9(木)14:30"]
     # print(lesson.number, lesson_number)
     for user in user_list:
         lesson_title = number_symbol[lesson.number] + lesson.title
