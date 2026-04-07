@@ -115,7 +115,11 @@ async def robots_txt():
     )
 
 
-FILE_PATH = Path("logs.json")
+# FILE_PATH = Path("logs.json")
+
+from logs import log_file
+
+FILE_PATH = log_file
 
 @router.get("/json/admin/logs")
 def get_logs_json(current_user: Annotated[Session, Depends(get_current_active_user)]):

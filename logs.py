@@ -18,7 +18,7 @@ else:
     log_dir = Path(".")
 
 
-db_file = log_dir / "logs.json"
+log_file = log_dir / "logs.json"
 
 
 # if log_dir != "":
@@ -31,7 +31,7 @@ log_dir.mkdir(parents=True, exist_ok=True)
 
 def add_log(user_name: str, user_tel: str, user_address: str,
             lesson_number: int, lesson_title: str, action: str,
-            file_path: Path = db_file):
+            file_path: Path = log_file):
     if file_path.exists():
         with open(file_path, "r", encoding="utf-8") as f:
             logs = json.load(f)
