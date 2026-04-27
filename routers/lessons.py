@@ -742,7 +742,7 @@ def json_confirmation_message_lesson(
             "lesson_title": lesson_title,
             "fee": lesson_price_str,
             "children": lesson_children,
-            "message": "後期教室" + lesson_title + "が" + first_date + "から始まります。初回に参加費" + lesson_price_str + "をお願いします。\n養老スポーツクラブ　若山"
+            "message": "前期教室" + lesson_title + "が" + first_date + "から始まります。初回に参加費" + lesson_price_str + "をお願いします。\n養老スポーツクラブ　若山"
         }
         message_list.append(message_format)
     return message_list
