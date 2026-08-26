@@ -151,3 +151,12 @@ def get_index_html(request: Request):
     }
     return templates.TemplateResponse(request=request, name=html_file, context=context)
 
+
+
+# 2026 late Machinaka Daigaku Syllabus
+@router.get("/2026/machinaka-daigaku-2", response_class=HTMLResponse, tags=["html"])
+def get_index_html(request: Request):
+    html_file = "/2026/machinaka_syllabus_2.html"
+    context = {
+    }
+    return templates.TemplateResponse(request=request, name=html_file, context=context)

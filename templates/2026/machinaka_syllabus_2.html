@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>まちなか大学 シラバス (2026年度後期)</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-color: #333333;
+            --border-color: #e9ecef;
+            --header-bg: #1a252f;
+        }
+
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            background-color: var(--header-bg);
+            color: white;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            margin: 0 0 10px 0;
+            font-size: 28px;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            margin: 0;
+            opacity: 0.9;
+            font-size: 16px;
+        }
+
+        .meta-info {
+            display: flex;
+            gap: 20px;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            font-size: 15px;
+        }
+
+        .course-card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            border: 1px solid var(--border-color);
+        }
+
+        .course-title {
+            color: var(--primary-color);
+            font-size: 22px;
+            margin-top: 0;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--accent-color);
+        }
+
+        .section-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-top: 25px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-title::before {
+            content: "";
+            display: inline-block;
+            width: 4px;
+            height: 16px;
+            background-color: var(--accent-color);
+            margin-right: 8px;
+            border-radius: 2px;
+        }
+
+        .section-content {
+            padding-left: 12px;
+            margin-bottom: 15px;
+        }
+
+        /* 授業計画のレイアウト設定 */
+        .schedule-container {
+            display: flex;
+            gap: 20px;
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 6px;
+        }
+
+        .schedule-col {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .schedule-item {
+            padding: 6px 0;
+            border-bottom: 1px dashed var(--border-color);
+            font-size: 14.5px;
+        }
+
+        .schedule-col .schedule-item:last-child {
+            border-bottom: none;
+        }
+
+        .notice {
+            font-size: 13px;
+            color: #6c757d;
+            margin-top: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #6c757d;
+            font-size: 14px;
+        }
+
+        .common-header {
+            padding-bottom: 1rem;
+        }
+
+        /* モバイル表示（600px以下）のスタイル調整 */
+        @media (max-width: 600px) {
+            .schedule-container {
+                flex-direction: column;
+                gap: 0;
+            }
+            .schedule-col:first-child .schedule-item:last-child {
+                border-bottom: 1px dashed var(--border-color);
+            }
+            .meta-info {
+                flex-direction: column;
+                gap: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="common-header">
+        <a href="/lessons">＜ 教室申込画面</a>
+    </div>
+
+<div class="container">
+    <header>
+        <h1>まちなか大学 シラバス</h1>
+        <p>授業内容および授業計画</p>
+        <div class="meta-info">
+            <span><strong>開講時期：</strong>2026年度後期</span>
+            <span><strong>担当教員：</strong>木村 眞知子</span>
+        </div>
+    </header>
+
+    <!-- 授業1 -->
+    <div class="course-card">
+        <h2 class="course-title">授業１：コミュニケーションデザイン論 ――広告から社会を見つめる</h2>
+        
+        <div class="section-title">授業のねらい</div>
+        <div class="section-content">
+            近年、「広告」は単に何かを“広告”するだけでなく、コンサルタント業務から商品企画まで、その領域は拡大し「コミュニケーションデザイン」という捉え方が最も近いと言えます。多くの企業が様々なメッセージを発信し続け、そのメッセージは時には私たちの暮らしや考え方にも影響を与えています。それを仕掛ける「コミュニケーションデザイン」の現場の様々な活動を実践的に学ぶことで、今という時代を、社会を見つめます。
+        </div>
+
+        <div class="section-title">授業計画</div>
+        <div class="schedule-container">
+            <div class="schedule-col">
+                <div class="schedule-item"><strong>第1講：</strong> コミュニケーションデザインとは何か</div>
+                <div class="schedule-item"><strong>第2講：</strong> 広告とコミュニケーション</div>
+                <div class="schedule-item"><strong>第3講：</strong> 広告と消費者</div>
+                <div class="schedule-item"><strong>第4講：</strong> 広告とマーケティング～商品企画</div>
+                <div class="schedule-item"><strong>第5講：</strong> 商品企画プレゼンテーション</div>
+                <div class="schedule-item"><strong>第6講：</strong> ＣＭが描くもの１――初めてのＣＭ</div>
+            </div>
+            <div class="schedule-col">
+                <div class="schedule-item"><strong>第7講：</strong> ＣＭが描くもの2――世界の広告</div>
+                <div class="schedule-item"><strong>第8講：</strong> ＣＭが描くもの３――ACC賞</div>
+                <div class="schedule-item"><strong>第9講：</strong> 広告と政治</div>
+                <div class="schedule-item"><strong>第10講：</strong> シティプロモーションを考える</div>
+                <div class="schedule-item"><strong>第11講：</strong> 広告表現と多様性</div>
+                <div class="schedule-item"><strong>第12講：</strong> わが町のシティプロモーション発表／コミュニケーションデザイン――今日から明日へ</div>
+            </div>
+        </div>
+
+        <div class="section-title">到達目標</div>
+        <div class="section-content">
+            「コミュニケーションデザイン」という切り口で様々な角度から見つめる姿勢をもつことを目指します。
+            <div class="notice">※授業の進捗状況によって内容を変更する場合があります。</div>
+        </div>
+    </div>
+
+    <!-- 授業2 -->
+    <div class="course-card">
+        <h2 class="course-title">授業２：伝えるためのクリエイティブワーク</h2>
+        
+        <div class="section-title">授業のねらい</div>
+        <div class="section-content">
+            情報を受け取るだけでなく発信する存在となってしまった私たち――メディアのあり方が変わる中、私たちはどのように自己表現すべきなのでしょうか。授業では、プロの情報の加工法を取り入れながら様々なテーマの作品づくりを行います。作品制作を通して、モノをつくるとはどういうことなのか、自分を表現するとはどういうことなのかを考えます。
+        </div>
+
+        <div class="section-title">授業計画</div>
+        <div class="schedule-container">
+            <div class="schedule-col">
+                <div class="schedule-item"><strong>第1講：</strong> クリエイティビティとは何か</div>
+                <div class="schedule-item"><strong>第2講：</strong> 作品制作①イメージを「言葉」に</div>
+                <div class="schedule-item"><strong>第3講：</strong> 作品制作①イメージを「言葉」に</div>
+                <div class="schedule-item"><strong>第4講：</strong> 作品制作②「言葉」をイメージに</div>
+                <div class="schedule-item"><strong>第5講：</strong> 作品制作②「言葉」をイメージに</div>
+                <div class="schedule-item"><strong>第6講：</strong> ラジオCM①企画・コンセプトワーク</div>
+            </div>
+            <div class="schedule-col">
+                <div class="schedule-item"><strong>第7講：</strong> ラジオCM②制作 録音</div>
+                <div class="schedule-item"><strong>第8講：</strong> ラジオCM③制作</div>
+                <div class="schedule-item"><strong>第9講：</strong> 「こんなことできません」①企画</div>
+                <div class="schedule-item"><strong>第10講：</strong> 「こんなことできません」②作品制作</div>
+                <div class="schedule-item"><strong>第11講：</strong> 「こんなことできません」③作品制作</div>
+                <div class="schedule-item"><strong>第12講：</strong> 作品発表</div>
+            </div>
+        </div>
+
+        <div class="section-title">到達目標</div>
+        <div class="section-content">
+            「コミュニケーションデザイン」という切り口で様々な角度から見つめる姿勢をもつことを目指します。
+            <div class="notice">※授業の進捗状況によって内容を変更する場合があります。</div>
+        </div>
+    </div>
+
+    <footer>
+        (一社) 養老スポーツクラブ
+    </footer>
+</div>
+
+</body>
+</html>
