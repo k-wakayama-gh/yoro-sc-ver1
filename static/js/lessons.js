@@ -90,7 +90,7 @@ async function renderLessons() {
         let numberColor = "gray";
         if (lesson.number <= 1) {
             numberColor = "#a44d3a";
-        } else if (lesson.number <= 9) {
+        } else if (lesson.number <= 10) {
             numberColor = "#4379a6";
         } else {
             numberColor = "#dcbd24";
