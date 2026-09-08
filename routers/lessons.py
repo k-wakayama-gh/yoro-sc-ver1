@@ -225,14 +225,14 @@ def create_my_lessons(session: Annotated[Session, Depends(get_session)], current
         session.commit()
         session.refresh(new_lesson)
     my_lessons = user.lessons
-    add_log(
-        user_name=user.user_details.last_name + "　" + user.user_details.first_name,
-        user_tel=user.user_details.tel,
-        user_address=user.user_details.address,
-        lesson_number=new_lesson.number,
-        lesson_title=new_lesson.title,
-        action="apply"
-    )
+    # add_log(
+    #     user_name=user.user_details.last_name + "　" + user.user_details.first_name,
+    #     user_tel=user.user_details.tel,
+    #     user_address=user.user_details.address,
+    #     lesson_number=new_lesson.number,
+    #     lesson_title=new_lesson.title,
+    #     action="apply"
+    # )
     return my_lessons
 
 
@@ -280,14 +280,14 @@ def create_my_lessons_for_children(
     session.commit()
     session.refresh(lesson)
     
-    add_log(
-        user_name=user.user_details.last_name + "　" + user.user_details.first_name,
-        user_tel=user.user_details.tel,
-        user_address=user.user_details.address,
-        lesson_number=lesson.number,
-        lesson_title=lesson.title,
-        action="apply"
-    )
+    # add_log(
+    #     user_name=user.user_details.last_name + "　" + user.user_details.first_name,
+    #     user_tel=user.user_details.tel,
+    #     user_address=user.user_details.address,
+    #     lesson_number=lesson.number,
+    #     lesson_title=lesson.title,
+    #     action="apply"
+    # )
 
     return {"success": "children signed up to the lesson"}
 
@@ -342,28 +342,28 @@ def delete_my_lesson(session: Annotated[Session, Depends(get_session)], current_
         session.add(cancel_lesson)
         session.commit()
         session.refresh(cancel_lesson)
-        add_log(
-            user_name=user.user_details.last_name + "　" + user.user_details.first_name,
-            user_tel=user.user_details.tel,
-            user_address=user.user_details.address,
-            lesson_number=cancel_lesson.number,
-            lesson_title=cancel_lesson.title,
-            action="cancel"
-        )
+        # add_log(
+        #     user_name=user.user_details.last_name + "　" + user.user_details.first_name,
+        #     user_tel=user.user_details.tel,
+        #     user_address=user.user_details.address,
+        #     lesson_number=cancel_lesson.number,
+        #     lesson_title=cancel_lesson.title,
+        #     action="cancel"
+        # )
         return {"removed": cancel_lesson}
     else:
         cancel_lesson.capacity_left = cancel_lesson.capacity - len(cancel_lesson.users)
         session.add(cancel_lesson)
         session.commit()
         session.refresh(cancel_lesson)
-        add_log(
-            user_name=user.user_details.last_name + "　" + user.user_details.first_name,
-            user_tel=user.user_details.tel,
-            user_address=user.user_details.address,
-            lesson_number=cancel_lesson.number,
-            lesson_title=cancel_lesson.title,
-            action="cancel"
-        )
+        # add_log(
+        #     user_name=user.user_details.last_name + "　" + user.user_details.first_name,
+        #     user_tel=user.user_details.tel,
+        #     user_address=user.user_details.address,
+        #     lesson_number=cancel_lesson.number,
+        #     lesson_title=cancel_lesson.title,
+        #     action="cancel"
+        # )
         return {"removed": cancel_lesson}
 
 
@@ -729,7 +729,7 @@ def json_confirmation_message_lesson(
         child_list = lesson.user_children
     message_list = []
     number_symbol = ["None","①", "②", "③", "④", "⑤", "⑥", "⑦","⑧", "⑨", "⑩", "⑪", "⑫", "⑬"]
-    first_date_list = ["初回日", "5/8(金)", "5/13(水)", "5/13(水)", "5/7(木)", "5/7(木)", "5/7(木)", "5/14(木)", "5/14(木)", "5/14(木)", "5/13(水)", "10/2(木)14:30", "10/9(木)13:30", "10/9(木)14:30"]
+    first_date_list = ["初回日", "10/9(金)", "10/7(水)", "11/11(水)", "10/1(木)", "10/1(木)", "10/1(木)", "10/8(木)", "10/8(木)", "10/8(木)", "10/9(金)", "10/7(水)", "10/9(木)13:30", "10/9(木)14:30"]
     # print(lesson.number, lesson_number)
     for user in user_list:
         lesson_title = number_symbol[lesson.number] + lesson.title
@@ -742,7 +742,7 @@ def json_confirmation_message_lesson(
             "lesson_title": lesson_title,
             "fee": lesson_price_str,
             "children": lesson_children,
-            "message": "前期教室" + lesson_title + "が" + first_date + "から始まります。初回に参加費" + lesson_price_str + "をお願いします。\n養老スポーツクラブ　若山"
+            "message": "後期教室" + lesson_title + "が" + first_date + "から始まります。初回に参加費" + lesson_price_str + "をお願いします。\n養老スポーツクラブ　若山"
         }
         message_list.append(message_format)
     return message_list
