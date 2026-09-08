@@ -30,7 +30,7 @@ async function renderLessons() {
     const lessonList = document.getElementById("lesson-list");
 
     const current_year = 2026;
-    const current_season = 1;
+    const current_season = 2;
 
     // clear the previous lesson list
     lessonList.textContent = "";
@@ -52,7 +52,7 @@ async function renderLessons() {
         let numberColor = "gray";
         if (lesson.number <= 1) {
             numberColor = "#a44d3a";
-        } else if (lesson.number >= 100) {
+        } else if (lesson.number >= 11) {
             numberColor = "#dcbd24";
         } else {
             numberColor = "#4379a6";
