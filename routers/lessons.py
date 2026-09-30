@@ -109,8 +109,12 @@ def get_current_period(session: Session):
 @router.get("/json/lessons", response_model=list[LessonRead], tags=["Lesson"])
 def read_lesson_list_json(session: Annotated[Session, Depends(get_session)]):
     current_period = get_current_period(session)
-    current_time = datetime.utcnow()
-    if current_time < current_period.start_time:
+    start_time = current_period.start_time.replace(tzinfo=timezone.utc)
+    #current_time = datetime.utcnow()
+    current_time = datetime.now(tz=timezone.utc)
+    #print(current_time.tzinfo)
+    #print(start_time.tzinfo)
+    if current_time < start_time:
         raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail="Lesson signup is not allowed yet")
     lessons = session.exec(select(Lesson).where(Lesson.year == current_period.year, Lesson.season == current_period.season)).all()
     return lessons
