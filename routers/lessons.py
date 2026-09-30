@@ -199,12 +199,12 @@ def read_my_lessons(session: Annotated[Session, Depends(get_session)], current_u
 # post: sign up to a lessons
 @router.post("/lessons/{id}", response_model=list[LessonRead], tags=["Lesson"])
 def create_my_lessons(session: Annotated[Session, Depends(get_session)], current_user: Annotated[UserRead, Depends(get_current_active_user)], id: int):
-    current_time = datetime.utcnow()
+    current_time = datetime.now(tz=timezone.utc)
     current_period = get_current_period(session)
     user = session.exec(select(User).where(User.username == current_user.username)).one()
     if user is None:
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Not authorized")
-    if current_time < current_period.start_time and not user.is_admin:
+    if current_time < current_period.start_time.replace(tzinfo=timezone.utc) and not user.is_admin:
         raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail="lesson signup is not allowed yet")
     new_lesson = session.exec(select(Lesson).where(Lesson.id == id)).one()
     if new_lesson.year != current_period.year or new_lesson.season != current_period.season:
