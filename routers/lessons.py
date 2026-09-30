@@ -225,14 +225,14 @@ def create_my_lessons(session: Annotated[Session, Depends(get_session)], current
         session.commit()
         session.refresh(new_lesson)
     my_lessons = user.lessons
-    # add_log(
-    #     user_name=user.user_details.last_name + "　" + user.user_details.first_name,
-    #     user_tel=user.user_details.tel,
-    #     user_address=user.user_details.address,
-    #     lesson_number=new_lesson.number,
-    #     lesson_title=new_lesson.title,
-    #     action="apply"
-    # )
+    add_log(
+        user_name=user.user_details.last_name + "　" + user.user_details.first_name,
+        user_tel=user.user_details.tel,
+        user_address=user.user_details.address,
+        lesson_number=new_lesson.number,
+        lesson_title=new_lesson.title,
+        action="apply"
+    )
     return my_lessons
 
 
@@ -280,14 +280,14 @@ def create_my_lessons_for_children(
     session.commit()
     session.refresh(lesson)
     
-    # add_log(
-    #     user_name=user.user_details.last_name + "　" + user.user_details.first_name,
-    #     user_tel=user.user_details.tel,
-    #     user_address=user.user_details.address,
-    #     lesson_number=lesson.number,
-    #     lesson_title=lesson.title,
-    #     action="apply"
-    # )
+    add_log(
+        user_name=user.user_details.last_name + "　" + user.user_details.first_name,
+        user_tel=user.user_details.tel,
+        user_address=user.user_details.address,
+        lesson_number=lesson.number,
+        lesson_title=lesson.title,
+        action="apply"
+    )
 
     return {"success": "children signed up to the lesson"}
 
@@ -342,28 +342,28 @@ def delete_my_lesson(session: Annotated[Session, Depends(get_session)], current_
         session.add(cancel_lesson)
         session.commit()
         session.refresh(cancel_lesson)
-        # add_log(
-        #     user_name=user.user_details.last_name + "　" + user.user_details.first_name,
-        #     user_tel=user.user_details.tel,
-        #     user_address=user.user_details.address,
-        #     lesson_number=cancel_lesson.number,
-        #     lesson_title=cancel_lesson.title,
-        #     action="cancel"
-        # )
+        add_log(
+            user_name=user.user_details.last_name + "　" + user.user_details.first_name,
+            user_tel=user.user_details.tel,
+            user_address=user.user_details.address,
+            lesson_number=cancel_lesson.number,
+            lesson_title=cancel_lesson.title,
+            action="cancel"
+        )
         return {"removed": cancel_lesson}
     else:
         cancel_lesson.capacity_left = cancel_lesson.capacity - len(cancel_lesson.users)
         session.add(cancel_lesson)
         session.commit()
         session.refresh(cancel_lesson)
-        # add_log(
-        #     user_name=user.user_details.last_name + "　" + user.user_details.first_name,
-        #     user_tel=user.user_details.tel,
-        #     user_address=user.user_details.address,
-        #     lesson_number=cancel_lesson.number,
-        #     lesson_title=cancel_lesson.title,
-        #     action="cancel"
-        # )
+        add_log(
+            user_name=user.user_details.last_name + "　" + user.user_details.first_name,
+            user_tel=user.user_details.tel,
+            user_address=user.user_details.address,
+            lesson_number=cancel_lesson.number,
+            lesson_title=cancel_lesson.title,
+            action="cancel"
+        )
         return {"removed": cancel_lesson}
 
 
