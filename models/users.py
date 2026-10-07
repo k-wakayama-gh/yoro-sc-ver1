@@ -4,7 +4,7 @@
 from typing import Optional, List, TYPE_CHECKING
 from sqlmodel import SQLModel, Field, Relationship
 # from pydantic import EmailStr
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 
 # my modules
 from models import link_table
@@ -94,7 +94,7 @@ class UserDetail(UserDetailBase, table=True):
     id: Optional[int] = Field(default=None, primary_key=True)
     user_id: Optional[int] = Field(default=None, foreign_key="user.id")
     user: Optional["User"] = Relationship(back_populates="user_details", link_model=link_table.UserUserDetailLink)
-    created_time: datetime = Field(default_factory=lambda: datetime.utcnow() + timedelta(hours=9))
+    created_time: datetime = Field(default_factory=lambda: datetime.now(timezone.utc) + timedelta(hours=9))
 
 
 
